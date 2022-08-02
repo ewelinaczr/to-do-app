@@ -23,15 +23,14 @@ function Search() {
   const { toDo, setToDo } = useContext(SingleToDoContext);
   const { allToDos, setAllToDos } = useContext(AllToDoContext);
 
-  // const [toDo, setToDo] = useState({ title: "", id: "", time: "", icon: "" });
-  // const { title, id, time, icon } = toDo;
-
   const handleChange = (e) => {
     setToDo((prSt) => ({ ...prSt, title: e.target.value, id: uuidv4() }));
   };
 
   const handleAdd = () => {
     setAllToDos((prSt) => [...prSt, toDo]);
+    document.getElementById("input").value = "";
+    setToDo({ title: "", id: "", time: "", iconId: 9 });
   };
 
   return (
@@ -53,6 +52,7 @@ function Search() {
             ref={inputRef}
             className={styles.input}
             placeholder="Type your task..."
+            id="input"
           ></input>
 
           <button

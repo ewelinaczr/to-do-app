@@ -7,6 +7,12 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
+  align-items: center;
+  .icon {
+    margin-left: 0.6rem;
+    color: $darkest_purple;
+    font-size: 1.6rem;
+  }
   .time_title {
     display: flex;
     flex-direction: column;

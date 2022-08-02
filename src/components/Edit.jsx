@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 // styles
 import styles from "./Edit.module.scss";
+// context
+import AllToDoContext from "./context/AllToDoContext";
 
-function Edit() {
+function Edit({ setOpenEdit, taskToEditId }) {
+  const { allToDos, setAllToDos } = useContext(AllToDoContext);
+  const taskToEdit = allToDos.filter((el) => el.id === taskToEditId);
+  console.log(taskToEdit[0].time);
+
+  const changeTime = () => {};
+
   return (
     <div className={styles.container}>
       <p>EDIT TASK</p>
@@ -13,6 +21,8 @@ function Edit() {
             className={styles.input_select}
             type="text"
             placeholder="time"
+            value={taskToEdit[0].time}
+            onChange={changeTime}
           />
         </div>
         <div className={styles.time_category_inp}>
@@ -32,11 +42,11 @@ function Edit() {
       </div>
       <div className={styles.task}>
         <p>TASK</p>
-        <input />
+        <input value={taskToEdit[0].title} />
       </div>
       <div className={styles.buttons}>
         <button>CONFIRM</button>
-        <button>CANCEL</button>
+        <button onClick={() => setOpenEdit((st) => !st)}>CANCEL</button>
       </div>
     </div>
   );

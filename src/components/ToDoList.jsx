@@ -11,14 +11,20 @@ import AllToDoContext from "./context/AllToDoContext";
 function ToDoList() {
   const [openEdit, setOpenEdit] = useState(false);
   const { allToDos, setAllToDos } = useContext(AllToDoContext);
+  const [taskToEdit, setTaskToEdit] = useState([]);
 
   return (
     <div className={styles.container}>
       {/* <ToDo setOpenEdit={setOpenEdit} /> */}
       {allToDos.map((el) => (
-        <ToDo setOpenEdit={setOpenEdit} key={uuidv4()} todo={el} />
+        <ToDo
+          setOpenEdit={setOpenEdit}
+          key={uuidv4()}
+          todo={el}
+          setTaskToEdit={setTaskToEdit}
+        />
       ))}
-      {openEdit && <Edit />}
+      {openEdit && <Edit setOpenEdit={setOpenEdit} taskToEditId={taskToEdit} />}
     </div>
   );
 }
