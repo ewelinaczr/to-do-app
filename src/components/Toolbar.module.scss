@@ -1,0 +1,60 @@
+@import "_variables.scss";
+
+.container {
+  background-color: $yellow;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  .time {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    color: $darkest_purple;
+    .time_input {
+      max-width: 8rem;
+      height: 2rem;
+      border-radius: 3rem;
+      border: none;
+      padding: 0rem 1rem;
+    }
+  }
+  .category {
+    .icons_grid {
+      color: $darkest_purple;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+      .category_icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+      }
+      .category_icon_active {
+        color: $red;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+      }
+      p {
+        font-size: 1rem;
+        margin: 0;
+      }
+    }
+  }
+  .time_btn {
+    display: flex;
+    justify-content: right;
+    margin: 0.8rem;
+    .time_button {
+      height: 2.4rem;
+      width: 2.4rem;
+      border: none;
+      border-radius: 3rem;
+      color: $darkest_purple;
+      cursor: pointer;
+    }
+  }
+}
