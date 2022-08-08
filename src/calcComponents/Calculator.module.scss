@@ -1,0 +1,46 @@
+@import "_variables.scss";
+
+.calculator_grid {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 4rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 4rem);
+  //   background-color: $dark_purple;
+  margin-bottom: 2rem;
+  justify-content: center;
+  .output {
+    background-color: white;
+    grid-column: 1 /-1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 1.4rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    .previous {
+      color: $dark_purple;
+      font-size: 1.2rem;
+    }
+    .current {
+      color: $darkest_purple;
+      font-size: 2rem;
+    }
+  }
+  button {
+    cursor: pointer;
+    font-size: 1.4rem;
+    background-color: $light_purple;
+    color: white;
+    border: 2px solid white;
+    border-radius: 0.4rem;
+    &:hover {
+      background-color: $yellow;
+      color: $darkest_purple;
+    }
+  }
+
+  .span {
+    grid-column: span 2;
+  }
+}
